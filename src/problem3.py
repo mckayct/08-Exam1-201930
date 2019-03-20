@@ -200,12 +200,16 @@ def problem3a(a, b):
     ###########################################################################
 
     total = 0
+    total2 = 0
+    total3 = 0
     for k in range(a**b):
-        if sum_of_digits(k) == True:
-            if is_prime(k) == True:
-                total = total + 1
-    return total
-
+        if is_prime(k) == True:
+           total = total + 1
+    for k in range(a**b):
+        if is_prime(sum_of_digits(k)) == True:
+            total2 = total2 + 1
+    total3 = total2 + total
+    return total3
 def run_test_problem3b():
     """ Tests the   problem3b   function. """
     print()

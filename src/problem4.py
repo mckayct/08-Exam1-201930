@@ -85,7 +85,18 @@ def problem4(point1, point2, n, window):
     # IMPORTANT: For PARTIAL CREDIT, ignore the colors.
     # -------------------------------------------------------------------------
 
-    dropx = point1.x
+    point1.attach_to(window)
+    point2.attach_to(window)
+    x_cor1 = point1.x
+    y_cor1= point1.y
+    x_cor2 = point2.x
+    y_cor2 = point2.y
+    for k in range(2*n+1):
+        point21 = rg.Point(x_cor2 +(x_cor1+x_cor2/2*k),y_cor2+(y_cor1+y_cor2/2*k))
+        point21.attach_to(window)
+        point11 = rg.Point(x_cor1 +(x_cor1+x_cor2/2*k),y_cor1+(y_cor1+y_cor2/2*k))
+        point11.attach_to(window)
+    window.render()
 
 # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
